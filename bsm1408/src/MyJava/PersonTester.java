@@ -1,7 +1,7 @@
 package MyJava;
 
 import beans.Gender;
-import beans.Person;
+import beans.Person_old;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,17 +9,17 @@ import java.util.stream.Collectors;
 
 public class PersonTester {
     public static void main(String[] args) {
-        List<Person> pepole = List.of(
-                new Person("Zeev", Gender.Male),
-                new Person("Amital",Gender.Female),
-                new Person("Hilda",Gender.Female),
-                new Person("Sasson",Gender.Male),
-                new Person("Michal",Gender.Female)
+        List<Person_old> pepole = List.of(
+                new Person_old("Zeev", Gender.Male),
+                new Person_old("Amital",Gender.Female),
+                new Person_old("Hilda",Gender.Female),
+                new Person_old("Sasson",Gender.Male),
+                new Person_old("Michal",Gender.Female)
         );
 
         //Imperative Approach
-        List<Person> females = new ArrayList<>();
-        for (Person person:pepole){
+        List<Person_old> females = new ArrayList<>();
+        for (Person_old person:pepole){
             if (Gender.Female.equals(person.getGender())){
                 females.add(person);
             }
@@ -30,7 +30,7 @@ public class PersonTester {
 //        }
 
         //Declarative Approach
-        List<Person> females2 = pepole.stream()
+        List<Person_old> females2 = pepole.stream()
                 .filter(person->Gender.Female.equals(person.getGender()))
                 .collect(Collectors.toList());
 
