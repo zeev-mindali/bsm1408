@@ -2,13 +2,15 @@ package MyJava;
 
 import org.w3c.dom.ls.LSOutput;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class MyFunctions {
     static Function<Integer,Integer> incByOneFunc = number->number+1;
 
-    Function <Integer,Integer> mulBy10 = number->number*10;
+    static Function <Integer,Integer> mulBy10 = number->number*10;
 
+    static BiFunction <Integer,Integer,Integer> incAndMul= (numberInc,numberMul)-> (numberInc+1)*numberMul;
     static Function<Integer,Integer> incByAndMulBy10 = incByOneFunc.andThen(mulBy10);
     public static void main(String[] args) {
         //Function<T,T> name = <Expression>
